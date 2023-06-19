@@ -1,0 +1,74 @@
+logo: "assets/img/ksmt-logo-black6.png"
+title: KSMT
+description: Kotlin API for SMT solvers
+theme: just-the-docs
+url: https://olganaumenko.github.io/pseudoksmt/
+
+
+#defaults:
+#  - scope:
+#      path: ""
+#    values:
+#      layout: "default"
+#      show_navigation: true
+
+aux_links:
+  KSMT on GitHub: https://github.com/ksmt
+
+aux_links_new_tab: true
+
+
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: true
+
+search:
+  # Split pages into sections that can be searched individually
+  # Supports 1 - 6, default: 2
+  heading_level: 2
+  # Maximum amount of previews per search result
+  # Default: 3
+  previews: 3
+  # Maximum amount of words to display before a matched word in the preview
+  # Default: 5
+  preview_words_before: 5
+  # Maximum amount of words to display after a matched word in the preview
+  # Default: 10
+  preview_words_after: 10
+  # Set the search token separator
+  # Default: /[\s\-/]+/
+  # Example: enable support for hyphenated search words
+  tokenizer_separator: /[\s/]+/
+  # Display the relative url in search results
+  # Supports true (default) or false
+  rel_url: true
+  # Enable or disable the search button that appears in the bottom right corner of every page
+  # Supports true or false (default)
+  button: false
+
+# Heading anchor links appear on hover over h1-h6 tags in page content
+# allowing users to deep link to a particular heading on a page.
+#
+# Supports true (default) or false
+heading_anchors: true
+
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
+
+callouts:
+  highlight:
+#    title: Highlight
+    color: grey-dk
+
+callouts_opacity: 0.1
+
+#collections:
+#  api:
+#    output: true
+#
+#just_the_docs:
+#  collections:
+#    api:
+#      name: API ref
+
+
