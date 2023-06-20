@@ -4,7 +4,7 @@ description: Kotlin API for SMT solvers
 remote_theme: just-the-docs/just-the-docs
 
 url: https://olganaumenko.github.io/pseudoksmt-website/
-baseurl: ``
+baseurl: ""
 
 plugins:
   - jekyll-remote-theme

@@ -81,6 +81,7 @@ DEPENDENCIES
   jekyll-remote-theme
   jekyll-seo-tag
   rake (~> 11.2, >= 11.2.2)
+  webrick
 
 BUNDLED WITH
    2.4.12
