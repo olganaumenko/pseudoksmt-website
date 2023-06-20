@@ -1,9 +1,12 @@
 logo: "assets/img/ksmt-logo-black6.png"
 title: KSMT
 description: Kotlin API for SMT solvers
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+
 url: https://olganaumenko.github.io/pseudoksmt/
 
+plugins:
+  - jekyll-remote-theme
 
 #defaults:
 #  - scope:
@@ -16,7 +19,6 @@ aux_links:
   KSMT on GitHub: https://github.com/ksmt
 
 aux_links_new_tab: true
-
 
 # Enable or disable the site search
 # Supports true (default) or false
