@@ -3,7 +3,7 @@ title: KSMT
 description: Kotlin API for SMT solvers
 remote_theme: just-the-docs/just-the-docs
 
-#baseurl: "/pseudoksmt-website"
+baseurl: "/pseudoksmt-website"
 url: https://olganaumenko.github.io/pseudoksmt-website/
 
 plugins:
