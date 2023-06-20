@@ -44,7 +44,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl "https://github.com/olganaumenko/pseudoksmt-website/blob/833be3d66161a8e58e9c937dbecbc31bffcfcfd2/docs/Gemfile"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
