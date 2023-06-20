@@ -8,6 +8,7 @@ url: https://olganaumenko.github.io/pseudoksmt-website/
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
+  - webrick
 
 #defaults:
 #  - scope:
