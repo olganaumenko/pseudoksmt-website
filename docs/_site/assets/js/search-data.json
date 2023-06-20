@@ -113,18 +113,60 @@
   },"16": {
     "doc": "Overview",
     "title": "Quick start",
-    "content": "To start using KSMT, install it via Gradle: . // core implementation(\"io.ksmt:ksmt-core:0.5.3\") // z3 solver implementation(\"io.ksmt:ksmt-z3:0.5.3\") . Find basic instructions in the Getting started guide and try it out with the Kotlin or Java examples. To go beyond the basic scenarios, proceed to the Advanced usage guide and try the advanced example. To get guided experience in KSMT, step through the detailed scenario for creating custom expressions. ",
+    "content": "To start using KSMT, install it via Gradle: . // core implementation(\"io.ksmt:ksmt-core:0.5.3\") // z3 solver implementation(\"io.ksmt:ksmt-z3:0.5.3\") . Find basic instructions in the Getting started guide and try it out with the Kotlin or Java examples. To go beyond the basic scenarios, proceed to the Advanced usage guide and try the advanced example. To get guided experience in KSMT, step through the detailed scenario for creating custom expressions. Check the Roadmap to know more about current feature support and plans for the nearest future. ",
     "url": "/pseudoksmt-website/#quick-start",
     
     "relUrl": "/#quick-start"
   },"17": {
     "doc": "Overview",
-    "title": "Key features",
-    "content": "Check the Roadmap to know more about current feature support and plans for the nearest future. Supported solvers and theories . KSMT provides support for various solvers: . | SMT solver | Linux-x64 | Windows-x64 | macOS-aarch64 | macOS-x64 | . | Z3 | ✔ | ✔ | ✔ | ✔ | . | Bitwuzla | ✔ | ✔ | ✔ |   | . | Yices2 | ✔ | ✔ | ✔ |   | . | cvc5 | ✔ | ✔ | ✔ |   | . You can also use SMT solvers across multiple theories: . | Theory | Z3 | Bitwuzla | Yices2 | cvc5 | . | Bitvectors | ✔ | ✔ | ✔ | ✔ | . | Arrays | ✔ | ✔ | ✔ | ✔ | . | IEEE Floats | ✔ | ✔ |   | ✔ | . | Uninterpreted Functions | ✔ | ✔ | ✔ | ✔ | . | Arithmetic | ✔ |   | ✔ | ✔ | . Solver-agnostic formula representation . Various scenarios are available for using SMT solvers: you can use a single solver to determine whether a formula is satisfiable, or you can apply several solvers to the same expression successively. In the latter case, you need a solver-agnostic formula representation. We implemented it in KSMT, so you can . | transform expressions from the solver native representation to KSMT representation and vice versa, | use formula introspection, | manipulate expressions without involving a solver, | use expressions even if the solver is freed. | . Expression interning (hash consing) affords faster expression comparison: we do not need to compare the expression trees. Expressions are deduplicated, so we avoid redundant memory allocation. Kotlin-based DSL for SMT formulas . KSMT provides you with a unified DSL for SMT expressions: . val array by mkArraySort(intSort, intSort) val index by intSort val value by intSort val expr = (array.select(index - 1.expr) lt value) and (array.select(index + 1.expr) gt value) . Utilities to simplify and transform expressions . KSMT provides a simplification engine applicable to all supported expressions for all supported theories: . | reduce expression size and complexity | evaluate expressions (including those with free variables) — reduce your expression to a constant | perform formula transformations | substitute expressions | . KSMT simplification engine implements more than 200 rules. By default, it attempts to apply simplifications when you create the expressions, but you can turn this feature off, if necessary. You can also simplify an arbitrary expression manually. Using multiple solvers (portfolio mode) . SMT solvers may differ in performance across different formulas: see the International Satisfiability Modulo Theories Competition. With KSMT portfolio solving, you can run multiple solvers in parallel on the same formula — until you get the first (the fastest) result. For detailed instructions on running multiple solvers, see Advanced usage. Running solvers in separate processes . Most of the SMT solvers are research projects — they are implemented via native libraries and are sometimes not production ready: . | they may ignore timeouts — they sometimes hang in a long-running operation, and you cannot interrupt it; | they may suddenly crash interrupting the entire process — because of a pointer issue, for example. | . KSMT runs each solver in a separate process, which adds to stability of your application and provides support for portfolio mode. KSMT distribution . Many solvers do not have prebuilt binaries, or binaries are for Linux only. KSMT is distributed as JVM library with solver binaries provided. The library has been tested against the SMT-LIB benchmarks. Documentation and examples are also available. ",
-    "url": "/pseudoksmt-website/#key-features",
+    "title": "Supported solvers and theories",
+    "content": "KSMT provides support for various solvers: . | SMT solver | Linux-x64 | Windows-x64 | macOS-aarch64 | macOS-x64 | . | Z3 | ✔ | ✔ | ✔ | ✔ | . | Bitwuzla | ✔ | ✔ | ✔ |   | . | Yices2 | ✔ | ✔ | ✔ |   | . | cvc5 | ✔ | ✔ | ✔ |   | . You can also use SMT solvers across multiple theories: . | Theory | Z3 | Bitwuzla | Yices2 | cvc5 | . | Bitvectors | ✔ | ✔ | ✔ | ✔ | . | Arrays | ✔ | ✔ | ✔ | ✔ | . | IEEE Floats | ✔ | ✔ |   | ✔ | . | Uninterpreted Functions | ✔ | ✔ | ✔ | ✔ | . | Arithmetic | ✔ |   | ✔ | ✔ | . ",
+    "url": "/pseudoksmt-website/#supported-solvers-and-theories",
     
-    "relUrl": "/#key-features"
+    "relUrl": "/#supported-solvers-and-theories"
   },"18": {
+    "doc": "Overview",
+    "title": "Solver-agnostic formula representation",
+    "content": "Various scenarios are available for using SMT solvers: you can use a single solver to determine whether a formula is satisfiable, or you can apply several solvers to the same expression successively. In the latter case, you need a solver-agnostic formula representation. We implemented it in KSMT, so you can . | transform expressions from the solver native representation to KSMT representation and vice versa, | use formula introspection, | manipulate expressions without involving a solver, | use expressions even if the solver is freed. | . Expression interning (hash consing) affords faster expression comparison: we do not need to compare the expression trees. Expressions are deduplicated, so we avoid redundant memory allocation. ",
+    "url": "/pseudoksmt-website/#solver-agnostic-formula-representation",
+    
+    "relUrl": "/#solver-agnostic-formula-representation"
+  },"19": {
+    "doc": "Overview",
+    "title": "Kotlin-based DSL for SMT formulas",
+    "content": "KSMT provides you with a unified DSL for SMT expressions: . val array by mkArraySort(intSort, intSort) val index by intSort val value by intSort val expr = (array.select(index - 1.expr) lt value) and (array.select(index + 1.expr) gt value) . ",
+    "url": "/pseudoksmt-website/#kotlin-based-dsl-for-smt-formulas",
+    
+    "relUrl": "/#kotlin-based-dsl-for-smt-formulas"
+  },"20": {
+    "doc": "Overview",
+    "title": "Utilities to simplify and transform expressions",
+    "content": "KSMT provides a simplification engine applicable to all supported expressions for all supported theories: . | reduce expression size and complexity | evaluate expressions (including those with free variables) — reduce your expression to a constant | perform formula transformations | substitute expressions | . KSMT simplification engine implements more than 200 rules. By default, it attempts to apply simplifications when you create the expressions, but you can turn this feature off, if necessary. You can also simplify an arbitrary expression manually. ",
+    "url": "/pseudoksmt-website/#utilities-to-simplify-and-transform-expressions",
+    
+    "relUrl": "/#utilities-to-simplify-and-transform-expressions"
+  },"21": {
+    "doc": "Overview",
+    "title": "Using multiple solvers (portfolio mode)",
+    "content": "SMT solvers may differ in performance across different formulas: see the International Satisfiability Modulo Theories Competition. With KSMT portfolio solving, you can run multiple solvers in parallel on the same formula — until you get the first (the fastest) result. For detailed instructions on running multiple solvers, see Advanced usage. ",
+    "url": "/pseudoksmt-website/#using-multiple-solvers-portfolio-mode",
+    
+    "relUrl": "/#using-multiple-solvers-portfolio-mode"
+  },"22": {
+    "doc": "Overview",
+    "title": "Running solvers in a separate processes",
+    "content": "Most of the SMT solvers are research projects — they are implemented via native libraries and are sometimes not production ready: . | they may ignore timeouts — they sometimes hang in a long-running operation, and you cannot interrupt it; | they may suddenly crash interrupting the entire process — because of a pointer issue, for example. | . KSMT runs each solver in a separate process, which adds to stability of your application and provides support for portfolio mode. ",
+    "url": "/pseudoksmt-website/#running-solvers-in-a-separate-processes",
+    
+    "relUrl": "/#running-solvers-in-a-separate-processes"
+  },"23": {
+    "doc": "Overview",
+    "title": "KSMT distribution",
+    "content": "Many solvers do not have prebuilt binaries, or binaries are for Linux only. KSMT is distributed as JVM library with solver binaries provided. The library has been tested against the SMT-LIB benchmarks. Documentation and examples are also available. ",
+    "url": "/pseudoksmt-website/#ksmt-distribution",
+    
+    "relUrl": "/#ksmt-distribution"
+  },"24": {
     "doc": "Overview",
     "title": "Overview",
     "content": " ",

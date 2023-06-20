@@ -200,7 +200,7 @@
     <li><a href="#solver-agnostic-formula-representation">Solver-agnostic formula representation</a> and easy-to-use <a href="#kotlin-based-dsl-for-smt-formulas">DSL</a></li>
     <li>Utilities to <a href="#utilities-to-simplify-and-transform-expressions">simplify and transform</a> your expressions</li>
     <li>Switching between solvers and support for <a href="#using-multiple-solvers-portfolio-mode">portfolio mode</a></li>
-    <li>Running solvers in a <a href="#running-solvers-in-separate-processes">separate process</a> to reduce timeout-related crashes</li>
+    <li>Running solvers in a <a href="#running-solvers-in-a-separate-processes">separate process</a> to reduce timeout-related crashes</li>
     <li>Streamlined <a href="#ksmt-distribution">solver delivery</a> with no need for building a solver or implementing JVM bindings</li>
   </ul>
 </blockquote><hr />
@@ -228,25 +228,17 @@
 example</a>.</p>
 
 <p>To get guided experience in KSMT, step through the detailed scenario for creating 
-<a href="custom-expressions">custom expressions</a>.</p><hr />
-<h2 id="key-features">
-  
-  
-    <a href="#key-features" class="anchor-heading" aria-labelledby="key-features"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Key features
-  
-  
-</h2>
-    
+<a href="custom-expressions">custom expressions</a>.</p>
 
 <p>Check the <a href="https://github.com/UnitTestBot/ksmt/blob/main/Requirements.md">Roadmap</a> to know more about current
 feature support and plans for the nearest future.</p><hr />
-<h3 id="supported-solvers-and-theories">
+<h2 id="supported-solvers-and-theories">
   
   
     <a href="#supported-solvers-and-theories" class="anchor-heading" aria-labelledby="supported-solvers-and-theories"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Supported solvers and theories
   
   
-</h3>
+</h2>
     
 
 <p>KSMT provides support for various solvers:</p>
@@ -343,13 +335,13 @@ feature support and plans for the nearest future.</p><hr />
     </tr>
   </tbody>
 </table><hr />
-<h3 id="solver-agnostic-formula-representation">
+<h2 id="solver-agnostic-formula-representation">
   
   
     <a href="#solver-agnostic-formula-representation" class="anchor-heading" aria-labelledby="solver-agnostic-formula-representation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Solver-agnostic formula representation
   
   
-</h3>
+</h2>
     
 
 <p>Various scenarios are available for using SMT solvers: you can use a single solver to determine whether a formula is
@@ -365,13 +357,13 @@ satisfiable, or you can apply several solvers to the same expression successivel
 
 <p>Expression interning (hash consing) affords faster expression comparison: we do not need to compare the expression
 trees. Expressions are deduplicated, so we avoid redundant memory allocation.</p><hr />
-<h3 id="kotlin-based-dsl-for-smt-formulas">
+<h2 id="kotlin-based-dsl-for-smt-formulas">
   
   
     <a href="#kotlin-based-dsl-for-smt-formulas" class="anchor-heading" aria-labelledby="kotlin-based-dsl-for-smt-formulas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Kotlin-based DSL for SMT formulas
   
   
-</h3>
+</h2>
     
 
 <p>KSMT provides you with a unified DSL for SMT expressions:</p>
@@ -383,13 +375,13 @@ trees. Expressions are deduplicated, so we avoid redundant memory allocation.</p
 <span class="kd">val</span> <span class="py">expr</span> <span class="p">=</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">index</span> <span class="p">-</span> <span class="mi">1</span><span class="p">.</span><span class="n">expr</span><span class="p">)</span> <span class="n">lt</span> <span class="n">value</span><span class="p">)</span> <span class="nf">and</span>
         <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">index</span> <span class="p">+</span> <span class="mi">1</span><span class="p">.</span><span class="n">expr</span><span class="p">)</span> <span class="n">gt</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div></div><hr />
-<h3 id="utilities-to-simplify-and-transform-expressions">
+<h2 id="utilities-to-simplify-and-transform-expressions">
   
   
     <a href="#utilities-to-simplify-and-transform-expressions" class="anchor-heading" aria-labelledby="utilities-to-simplify-and-transform-expressions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Utilities to simplify and transform expressions
   
   
-</h3>
+</h2>
     
 
 <p>KSMT provides a simplification engine applicable to all supported expressions for all supported theories:</p>
@@ -404,13 +396,13 @@ trees. Expressions are deduplicated, so we avoid redundant memory allocation.</p
 <p>KSMT simplification engine implements more than 200 rules.
 By default, it attempts to apply simplifications when you create the expressions, but you can turn this
 feature off, if necessary. You can also simplify an arbitrary expression manually.</p><hr />
-<h3 id="using-multiple-solvers-portfolio-mode">
+<h2 id="using-multiple-solvers-portfolio-mode">
   
   
     <a href="#using-multiple-solvers-portfolio-mode" class="anchor-heading" aria-labelledby="using-multiple-solvers-portfolio-mode"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using multiple solvers (portfolio mode)
   
   
-</h3>
+</h2>
     
 
 <p>SMT solvers may differ in performance across different formulas:
@@ -420,13 +412,13 @@ see the <a href="https://smt-comp.github.io/2022/">International Satisfiability 
 (the fastest) result.</p>
 
 <p>For detailed instructions on running multiple solvers, see <a href="advanced-usage">Advanced usage</a>.</p><hr />
-<h3 id="running-solvers-in-separate-processes">
+<h2 id="running-solvers-in-a-separate-processes">
   
   
-    <a href="#running-solvers-in-separate-processes" class="anchor-heading" aria-labelledby="running-solvers-in-separate-processes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Running solvers in separate processes
+    <a href="#running-solvers-in-a-separate-processes" class="anchor-heading" aria-labelledby="running-solvers-in-a-separate-processes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Running solvers in a separate processes
   
   
-</h3>
+</h2>
     
 
 <p>Most of the SMT solvers are research projects — they are implemented via native libraries and are sometimes not 
@@ -438,13 +430,13 @@ production ready:</p>
 
 <p>KSMT runs each solver in a separate process, which adds to stability of your application and provides support for
 portfolio mode.</p><hr />
-<h3 id="ksmt-distribution">
+<h2 id="ksmt-distribution">
   
   
     <a href="#ksmt-distribution" class="anchor-heading" aria-labelledby="ksmt-distribution"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> KSMT distribution
   
   
-</h3>
+</h2>
     
 
 <p>Many solvers do not have prebuilt binaries, or binaries are for Linux only.</p>

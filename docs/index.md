@@ -17,7 +17,7 @@ nav_order: 1
 > * [Solver-agnostic formula representation](#solver-agnostic-formula-representation) and easy-to-use [DSL](#kotlin-based-dsl-for-smt-formulas)
 > * Utilities to [simplify and transform](#utilities-to-simplify-and-transform-expressions) your expressions
 > * Switching between solvers and support for [portfolio mode](#using-multiple-solvers-portfolio-mode)
-> * Running solvers in a [separate process](#running-solvers-in-separate-processes) to reduce timeout-related crashes
+> * Running solvers in a [separate process](#running-solvers-in-a-separate-processes) to reduce timeout-related crashes
 > * Streamlined [solver delivery](#ksmt-distribution) with no need for building a solver or implementing JVM bindings
 
 ---
@@ -41,14 +41,11 @@ example](https://github.com/UnitTestBot/ksmt/tree/main/examples/src/main/kotlin/
 To get guided experience in KSMT, step through the detailed scenario for creating 
 [custom expressions](custom-expressions).
 
----
-## Key features
-
 Check the [Roadmap](https://github.com/UnitTestBot/ksmt/blob/main/Requirements.md) to know more about current
 feature support and plans for the nearest future.
 
 ---
-### Supported solvers and theories
+## Supported solvers and theories
 
 KSMT provides support for various solvers:
 
@@ -70,7 +67,7 @@ You can also use SMT solvers across multiple theories:
 | Arithmetic              |  &#x2714;  |          |   &#x2714;   | &#x2714;  |
 
 ---
-### Solver-agnostic formula representation
+## Solver-agnostic formula representation
 
 Various scenarios are available for using SMT solvers: you can use a single solver to determine whether a formula is
 satisfiable, or you can apply several solvers to the same expression successively. In the latter case, you need a _solver-agnostic formula representation_.
@@ -85,7 +82,7 @@ Expression interning (hash consing) affords faster expression comparison: we do 
 trees. Expressions are deduplicated, so we avoid redundant memory allocation.
 
 ---
-### Kotlin-based DSL for SMT formulas
+## Kotlin-based DSL for SMT formulas
 
 KSMT provides you with a unified DSL for SMT expressions:
 
@@ -99,7 +96,7 @@ val expr = (array.select(index - 1.expr) lt value) and
 ```
 
 ---
-### Utilities to simplify and transform expressions
+## Utilities to simplify and transform expressions
 
 KSMT provides a simplification engine applicable to all supported expressions for all supported theories:
 
@@ -113,7 +110,7 @@ By default, it attempts to apply simplifications when you create the expressions
 feature off, if necessary. You can also simplify an arbitrary expression manually.
 
 ---
-### Using multiple solvers (portfolio mode)
+## Using multiple solvers (portfolio mode)
 
 SMT solvers may differ in performance across different formulas:
 see the [International Satisfiability Modulo Theories Competition](https://smt-comp.github.io/2022/).
@@ -124,7 +121,7 @@ With KSMT portfolio solving, you can run multiple solvers in parallel on the sam
 For detailed instructions on running multiple solvers, see [Advanced usage](advanced-usage).
 
 ---
-### Running solvers in separate processes
+## Running solvers in a separate processes
 
 Most of the SMT solvers are research projects — they are implemented via native libraries and are sometimes not 
 production ready:
@@ -135,7 +132,7 @@ KSMT runs each solver in a separate process, which adds to stability of your app
 portfolio mode.
 
 ---
-### KSMT distribution
+## KSMT distribution
 
 Many solvers do not have prebuilt binaries, or binaries are for Linux only.
 
