@@ -3,8 +3,8 @@ title: KSMT
 description: Kotlin API for SMT solvers
 remote_theme: just-the-docs/just-the-docs
 
-baseurl: "/pseudoksmt-website"
-#url: https://olganaumenko.github.io/pseudoksmt-website/
+#baseurl: "/pseudoksmt-website"
+url: https://olganaumenko.github.io/pseudoksmt-website/
 
 plugins:
   - jekyll-remote-theme
@@ -66,6 +66,13 @@ callouts:
     color: grey-dk
 
 callouts_opacity: 0.1
+
+# For copy button on code
+enable_copy_code_button: true
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
 
 #collections:
 #  api:

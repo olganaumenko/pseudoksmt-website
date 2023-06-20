@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Advanced usage
+permalink: advanced-usage
 nav_order: 3
 ---
 # Advanced usage

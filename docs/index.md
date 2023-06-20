@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Overview
+permalink: overview
 nav_order: 1
 ---
 
@@ -32,7 +33,7 @@ implementation("io.ksmt:ksmt-core:0.5.3")
 implementation("io.ksmt:ksmt-z3:0.5.3")
 ```
 
-Find basic instructions in the [Getting started](https://ksmt.io/getting-started) guide and try it out with the 
+Find basic instructions in the [Getting started](/getting-started) guide and try it out with the 
 [Kotlin](https://github.com/UnitTestBot/ksmt/tree/main/examples/src/main/kotlin) or [Java](https://github.com/UnitTestBot/ksmt/tree/main/examples/src/main/java) examples.
 
 To go beyond the basic scenarios, proceed to the [Advanced usage](https://ksmt.io/advanced-usage) guide and try the [advanced 
