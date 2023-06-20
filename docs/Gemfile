@@ -6,3 +6,6 @@ gem 'jekyll', '~> 4.3', '>= 4.3.2'
 # gem 'just-the-docs', '~> 0.5.3'
 
 gem "jekyll-remote-theme"
+
+gem "jekyll-seo-tag"
+gem 'rake', '~> 11.2', '>= 11.2.2'

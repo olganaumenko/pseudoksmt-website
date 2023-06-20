@@ -7,6 +7,7 @@ url: https://olganaumenko.github.io/pseudoksmt/
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
 
 #defaults:
 #  - scope:
