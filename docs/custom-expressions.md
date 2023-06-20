@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Custom expressions
-permalink: custom-expressions
+
 nav_order: 4
 ---
 # Usage scenario: custom expressions
