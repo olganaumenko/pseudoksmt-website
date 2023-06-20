@@ -69,7 +69,7 @@ abstract class CustomExpr<T : KSort>(ctx: KContext) : KExpr<T>(ctx) {
 ### Defining a custom expression
 
 Important notes on defining custom expressions are provided as comments in the examples.
-See [expression management](#expression-management) for details about `equals`, `hashCode`, 
+See [Managing expressions](#managing-expressions) for details about `equals`, `hashCode`, 
 `internEquals`, and `internHashCode`.
 
 ```kotlin

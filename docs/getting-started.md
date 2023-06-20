@@ -9,7 +9,7 @@ nav_order: 2
 
 For your first steps with KSMT, try our [code examples](https://github.com/UnitTestBot/ksmt/tree/main/examples).
 
-To check OS compatibility, see [Supported solvers and theories](https://ksmt.io/#supported-solvers-and-theories).
+To check OS compatibility, see [Supported solvers and theories](index#supported-solvers-and-theories).
 
 ---
 <details open markdown="block">

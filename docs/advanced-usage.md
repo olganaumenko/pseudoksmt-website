@@ -6,7 +6,7 @@ nav_order: 3
 # Advanced usage
 {: .no_toc }
 
-For basic KSMT usage, please refer to [Getting started](https://ksmt.io/getting-started) guide.
+For basic KSMT usage, please refer to [Getting started](getting-started) guide.
 
 Having tried the essential scenarios, find the 
 [advanced example](https://github.com/UnitTestBot/ksmt/tree/main/examples/src/main/kotlin/AdvancedExamples.kt) and 
